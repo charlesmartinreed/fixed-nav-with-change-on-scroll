@@ -24,10 +24,18 @@ body {
   transition: box-shadow 0.6s linear;
   width: 70%;
   margin: 0 auto;
+  position: relative;
 }
 
-.blog-post-container:nth-child(even) {
-  border-left: 5px solid goldenrod;
+.blog-post-container::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  height: 150px;
+  transform: translateY(-50%);
+  width: 3px;
+  background-color: rgb(233, 180, 46);
 }
 
 .blog-post-container:hover {
