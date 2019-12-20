@@ -17,13 +17,14 @@ body {
 
 /* NAVBAR STYLING */
 .navbar {
-  width: 100%;
-  height: 8%;
+  min-width: 100%;
+  min-height: 10%;
   /* background-color: rgb(214, 214, 228); */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 
 .navbar-touch-element {
@@ -46,6 +47,92 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.navbar-link-container {
+  position: fixed;
+  opacity: 0;
+
+  min-width: 90%;
+  min-height: 10%;
+
+  background-color: rgb(232, 232, 246);
+
+  transform: translateX(-200%);
+  transition: all 0.7s ease-in-out;
+}
+
+.navbar-link-container.navbar-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.navbar-link a {
+  text-decoration: transparent;
+  color: rgb(32, 32, 32);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09rem;
+
+  /* transition: all 0.2s linear;
+  padding-bottom: 0.3em; */
+  position: relative;
+}
+
+.navbar-link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3em;
+  height: 5px;
+  width: 100%;
+  transform: scale(0);
+
+  transform-origin: left;
+  transition: all 0.3s linear;
+}
+
+.navbar-link .link-1:hover::after {
+  background-color: #f0d287;
+  transform: scale(1);
+}
+
+.navbar-link .link-2:hover::after {
+  background-color: #a495b4;
+  transform: scale(1);
+}
+.navbar-link .link-3:hover::after {
+  background-color: #7f82aa;
+  transform: scale(1);
+}
+.navbar-link .link-4:hover::after {
+  background-color: #636fa4;
+  transform: scale(1);
+}
+
+/* .navbar-link a.link-1:hover {
+  border-bottom: 4px solid #f0d287;
+}
+.navbar-link a.link-2:hover {
+  border-bottom: 4px solid #a495b4;
+}
+.navbar-link a.link-3:hover {
+  border-bottom: 4px solid #7f82aa;
+}
+.navbar-link a.link-4:hover {
+  border-bottom: 4px solid #636fa4;
+} */
+
+/* OPEN NAVBAR STYLING */
+
 .navbar-touch-element.navbar-open .square-1 {
   background-color: #f0d287;
   transition: all 0.1s linear;
@@ -53,7 +140,7 @@ body {
 }
 
 .navbar-touch-element.navbar-open .square-2 {
-  background-color: #a89eb3;
+  background-color: #a495b4;
   transition: all 0.2s linear;
   transform: translate(30%, -120%);
 }
@@ -69,6 +156,8 @@ body {
   transition: all 0.4s linear;
   transform: translate(-130%, 20%);
 }
+
+/* BLOG CONTAINER STLYING */
 
 .blog-post-container > * {
   /* margin: 0 auto; */
