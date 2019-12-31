@@ -4,49 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
     <link rel="stylesheet" href="style.css">
+    
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/b6f2063a39.js" crossorigin="anonymous"></script>
+    
     <script defer src="script.js"></script>
     <title>Charlie Codes</title>
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-link-container navbar-visible">
+      <div class="navbar-link-container">
         <ul class="navbar-links">
-          <li class="navbar-link"><a href="#" class="link-1">Home</a></li>
-          <li class="navbar-link"><a href="#" class="link-2">Blog</a></li>
-          <li class="navbar-link"><a href="#" class="link-3">Projects</a></li>
-          <li class="navbar-link"><a href="#" class="link-4">Hire Me!</a></li>
+          <!-- <li class="navbar-link"><a href="#" class="link-1">Home</a></li> -->
+          <li class="navbar-link"><a href="./index.html" class="link-1">Front Page</a></li>
+          <li class="navbar-link"><a href="#" class="link-2">Portfolio</a></li>
+          <li class="navbar-link"><a href="#page-footer" class="link-3">Contact Me</a></li>
         </ul>
       </div>
-      <div class="navbar-touch-element navbar-open">
+      <div class="navbar-touch-element">
         <div class="navbar-square square-1"></div>
         <div class="navbar-square square-2"></div>
         <div class="navbar-square square-3"></div>
         <div class="navbar-square square-4"></div>
       </div>
     </nav>
+
+    <div class="logo-container">
+      <img class="logo-image" src="./images/cclogo.png" alt="">
+      <h3 class="logo-text"><span>Charlie</span> Codes</h3>
+    </div>
     <section class="main-content">
         <div class="blog-post-container">
  <h1 class="blog-title">Humble Beginnings</h1>
-      <h4 class="blog-timestamp">January 1, 1970</h4>
+      <h4 class="blog-timestamp">December 31, 2019</h4>
       <p class="blog-preclick-text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit odit
-        veniam placeat harum suscipit deleniti ipsam modi, ipsum doloribus velit
-        eius tempora dolor, quas quae quaerat distinctio possimus qui itaque eos
-        veritatis et! Ea, officiis!
+        If you're able to read this then I managed to reboot my personal site without too much drama. Things are a little bare at the moment - not much in the way of musings and only a few, select portfolio projects are available for perusal over in that section of the site - but with a new decade comes new opportunities for change and growth.
+
+        Of course the first task of real importance is to finish Gatsby-fying things around here. And yes, 'Gatsby-fying' is a actual, totally cromulent word.
       </p>
       <a href="#" class="blog-permalink" data-link-after="&#8627">Continue reading</a>
         </div>
         
-        <div class="blog-post-container">
+        <!-- <div class="blog-post-container">
  <h1 class="blog-title">Endless Summer</h1>
       <h4 class="blog-timestamp">August 6, 1991</h4>
       <p class="blog-preclick-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nostrum eaque maiores blanditiis a eos voluptatem excepturi, et aut harum est! Similique, iusto deleniti? Saepe magnam velit inventore voluptatem praesentium autem, esse doloremque in ducimus qui dicta at deleniti quae sequi! Nobis velit vitae aliquid, aperiam porro mollitia maiores.
       </p>
       <a href="#" class="blog-permalink" data-link-after="&#8627">Continue reading</a>
-        </div>
-     
+        </div> -->
     </section>
+    <footer id="page-footer" data-before="&#8679">
+      <div id="footer-content">
+        <p>2020 &copy; Charles Martin Reed</p>
+        <p>Made with plenty of 💖 <small>...and maybe a little 🍺 too</small></p>
+        <div id="footer-content-icons">
+          <a href="https://github.com/charlesmartinreed"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/supalatecharlie"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:charlesmartinreed@icloud.com"><i class="far fa-envelope"></i></a>
+        </div>
+        
+      </div>
+      <a href="#" class="to-top-link"><i class="fas fa-arrow-up" id="to-top-icon"></i></a>
+    </footer>
   </body>
 </html>
