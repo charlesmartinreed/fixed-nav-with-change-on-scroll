@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,300,300i,400,400i,500,500i,600,600i,700,700i|IBM+Plex+Serif:300,300i,400,400i,500,500i,700,700i&display=swap");
+
 *,
 *::before,
 *::after {
@@ -7,8 +9,8 @@
 }
 
 :root {
-  --ff-basic: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --ff-sans-main: "IBM Plex Sans", sans-serif;
+  --ff-serif-main: "IBM Plex Serif", serif;
 }
 
 body {
@@ -17,6 +19,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+a {
+  font-family: var(--ff-sans-main);
 }
 
 .logo-container {
@@ -131,7 +137,7 @@ html {
 .navbar-link a {
   text-decoration: transparent;
   color: rgb(32, 32, 32);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.02rem;
@@ -228,6 +234,8 @@ html {
 }
 
 .blog-post-container {
+  font-family: var(--ff-serif-main);
+
   transition: box-shadow 0.6s linear;
   width: 70%;
   margin: 0 auto;
@@ -247,16 +255,18 @@ html {
 }
 
 .blog-post-container:hover {
-  box-shadow: 0px 0px 3rem rgba(110, 26, 26, 0.3);
+  box-shadow: 0px 0px 3rem rgba(0, 0, 0, 0.3);
 }
 
 body {
-  font-family: var(--ff-basic);
+  font-family: var(--ff-sans-main);
   background-color: rgb(232, 232, 246);
   color: rgb(32, 32, 32);
 }
 
 .blog-title {
+  font-family: var(--ff-sans-main);
+
   font-size: 2.7rem;
   text-transform: uppercase;
   color: rgb(20, 20, 117);
@@ -266,6 +276,7 @@ body {
 .blog-timestamp {
   padding-top: 0;
   font-weight: 500;
+  font-family: var(--ff-sans-main);
 }
 
 .blog-preclick-text {
@@ -348,4 +359,19 @@ body {
 
 #footer-content a:hover {
   color: rgb(233, 180, 46);
+}
+
+@media screen and (max-width: 525px) {
+  .navbar-link a {
+    font-size: 1rem;
+  }
+
+  .navbar-touch-element {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    height: 100%;
+    width: 10%;
+    cursor: pointer;
+  }
 }
