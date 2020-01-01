@@ -16,6 +16,41 @@ const projects = [
       "https://github.com/charlesmartinreed/yet-another-password-generator",
     projectDescription:
       "A simple, clean password generator that I designed to help my grandfather - aka, my Pawpaw :D - come up with safe, secure passwords that he could confidently use to cover his digital footprints."
+  },
+  {
+    projectID: "2",
+    projectName: "Imbalance",
+    projectURL: "./portfolio-projects/project-3/public/index.html",
+    projectRepo:
+      "https://github.com/charlesmartinreed/imbalance-the-novel-website",
+    projectDescription:
+      "A minimalist website designed for a young, yet undiscovered novelist featuring just the written word and some words written about the author. Integrates with Stripe."
+  },
+  {
+    projectID: "3",
+    projectName: "Shop Meet",
+    projectURL: "./portfolio-projects/project-4/index.html",
+    projectRepo:
+      "https://github.com/charlesmartinreed/mobile-first-shopping-layout",
+    projectDescription:
+      "How would you like to go shopping with someone who could dress you and undress you with equal skill? Try Shop Meet, a dating app where you shop until you drop (your pants)."
+  },
+  {
+    projectID: "4",
+    projectName: "Reduce/Reuse",
+    projectURL: "./portfolio-projects/project-5/index.html",
+    projectRepo:
+      "https://github.com/charlesmartinreed/product-release-signup-form",
+    projectDescription:
+      "A simple two pane design submitted for a guitar pedal designer. Integrates a simple form/newsletter signup with Netlify handling the CAPTCHA integration and Mailchimp pulling newsletter duty. "
+  },
+  {
+    projectID: "5",
+    projectName: "What Time Is It Now?",
+    projectURL: "./portfolio-projects/project-6/index.html",
+    projectRepo: "https://github.com/charlesmartinreed/what-time-is-now",
+    projectDescription:
+      "Written as a design challenge to create a clean, modern looking 'analog' clock. Each day comes with a bit of sassy text just to make you smile."
   }
 ];
 
