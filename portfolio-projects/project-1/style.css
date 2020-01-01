@@ -3,7 +3,8 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -27,12 +28,16 @@ body {
   height: 100vh;
   display: grid;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* place-items: center; */
   /* background-color: rgb(218, 218, 236); */
   background-image: var(--gradient);
   background-size: 400%;
-  animation: bodyGradient var(--gradient-duration) infinite alternate
+  -webkit-animation: bodyGradient var(--gradient-duration) infinite alternate
+    ease-in-out;
+          animation: bodyGradient var(--gradient-duration) infinite alternate
     ease-in-out;
 }
 
@@ -53,7 +58,8 @@ audio {
 
 .now-playing {
   background-color: rgb(226, 226, 238);
-  box-shadow: 0px 0px 4em rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 4em rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 4em rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   padding-top: 2rem;
   /* padding-left: 1.5rem; */
@@ -64,10 +70,21 @@ audio {
   height: 100%;
   max-width: 500px;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .now-playing .now-playing-art {
@@ -78,7 +95,8 @@ audio {
 .now-playing .album-art {
   height: 120px;
   width: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .now-playing .now-playing-info {
@@ -116,7 +134,10 @@ audio {
   padding: 0 1em;
   margin-top: 0.1em;
   color: rgb(43, 42, 42);
-  box-shadow: 1px 1px 2em rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 2em rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 2em rgba(0, 0, 0, 0.5);
+
+  -webkit-transition: all 0.3s linear;
 
   transition: all 0.3s linear;
   cursor: pointer;
@@ -131,11 +152,13 @@ audio {
 .track-listing .track-list .track-item.playing {
   color: rgb(29, 29, 136);
   background-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .track-listing .track-list .track-item:hover {
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .track-listing .track-list .track-item span {
@@ -144,6 +167,15 @@ audio {
 }
 
 /* KEYFRAME ANIMATIONS */
+@-webkit-keyframes bodyGradient {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
 @keyframes bodyGradient {
   0% {
     background-position: 0%;

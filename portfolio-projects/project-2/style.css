@@ -3,7 +3,8 @@
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -18,12 +19,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-  background: #525252; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3d72b4,
-    #525252
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: #525252; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(#3d72b4),
+    to(#525252)
+  );
   background: linear-gradient(
     to right,
     #3d72b4,
@@ -38,7 +40,8 @@ body {
   min-width: 80%;
   padding: 2rem;
   background-color: rgb(33, 96, 173, 0.4);
-  box-shadow: 0 0 8rem rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 8rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 8rem rgba(0, 0, 0, 0.7);
 }
 
 .app-container .app-password-field {
@@ -46,6 +49,8 @@ body {
   font-weight: 900;
   color: rgb(59, 141, 129);
   margin-bottom: 1.4rem;
+
+  -webkit-transition: all 0.3s ease-in-out;
 
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -56,7 +61,8 @@ body {
   position: absolute;
   top: 15%;
   right: 50%;
-  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   padding: 6px 20px;
   background-color: rgba(184, 137, 19, 0.4);
   color: rgb(32, 32, 32);
@@ -68,26 +74,53 @@ body {
 }
 
 .copy-contents.copy-successful {
-  animation-name: inAndUp;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-direction: forwards;
+  -webkit-animation-name: inAndUp;
+          animation-name: inAndUp;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+}
+
+@-webkit-keyframes inAndUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: translateX(50%) translateY(-50%);
+            transform: translateX(50%) translateY(-50%);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(50%) translateY(-75%);
+            transform: translateX(50%) translateY(-75%);
+  }
 }
 
 @keyframes inAndUp {
   0% {
     opacity: 0;
-    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 
   50% {
     opacity: 1;
-    transform: translateX(50%) translateY(-50%);
+    -webkit-transform: translateX(50%) translateY(-50%);
+            transform: translateX(50%) translateY(-50%);
   }
 
   100% {
     opacity: 0;
-    transform: translateX(50%) translateY(-75%);
+    -webkit-transform: translateX(50%) translateY(-75%);
+            transform: translateX(50%) translateY(-75%);
   }
 }
 
@@ -124,7 +157,13 @@ input[type="submit"] {
   font-size: 1.2rem;
   cursor: pointer;
 
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  transition: -webkit-transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
   transition: transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  transition: transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   outline: none;
 }
 
@@ -150,20 +189,30 @@ input[type="checkbox"] {
   width: 110%;
   background-color: transparent;
 
+  -webkit-transition: -webkit-transform 0.2s linear;
+
+  transition: -webkit-transform 0.2s linear;
+
   transition: transform 0.2s linear;
-  transform-origin: bottom right;
-  transform: scale(0);
+
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 /* UNCHECKED */
 
 /* CHECKED */
 input:checked ~ .checkbox-custom {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   border-bottom: 5px solid rgba(59, 141, 129, 0.6);
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
