@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <title>Shop Meet.</title>
+  </head>
+  <body>
+    <!-- splash image, seen when app is opened -->
+    <div id="splash-display">
+      <div id="splash-text-container">
+        <h1 id="splash-text">Shop Meet</h1>
+        <p>The couple that shops together, drops together.</p>
+      </div>
+    </div>
+
+    <!-- everything except the footer goes in content -->
+    <div class="content">
+      <!-- header section contains logo and search input -->
+      <header class="app-header">
+        <div class="container">
+          <div class="logo"><span>S</span><span>M</span></div>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="I'm shopping for a new..."
+          />
+        </div>
+      </header>
+
+      <div class="subheader" data-subheader-emoji="❄️">
+        <p class="subheader-update-text">
+          <span>50%</span> off annual subscriptions!
+        </p>
+        <a href="#" class="subheader-update-link">Upgrade Today</a>
+      </div>
+
+      <!-- profiles go here, in grid form -->
+      <div class="grid-profiles">
+        <div class="grid-item">
+          <h4>Caleb Jacobson</h4>
+          <p>33 years old</p>
+          <p>5 mi. away</p>
+          <img src="./imgs/male-profile-pic.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Marissa Reid</h4>
+          <p>26 years old</p>
+          <p>8 mi. away</p>
+          <img src="./imgs/female-profile-pic.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Gunst Byerson</h4>
+          <p>41 years old</p>
+          <p>3 mi. away</p>
+          <img src="./imgs/male-profile-pic-2.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Ashley Hesse</h4>
+          <p>19 years old</p>
+          <p>6 mi. away</p>
+          <img src="./imgs/female-profile-pic-2.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Caleb Jacobson</h4>
+          <p>33 years old</p>
+          <p>5 mi. away</p>
+          <img src="./imgs/male-profile-pic.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Marissa Reid</h4>
+          <p>26 years old</p>
+          <p>8 mi. away</p>
+          <img src="./imgs/female-profile-pic.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Gunst Byerson</h4>
+          <p>41 years old</p>
+          <p>3 mi. away</p>
+          <img src="./imgs/male-profile-pic-2.jpg" alt="" />
+        </div>
+        <div class="grid-item">
+          <h4>Ashley Hesse</h4>
+          <p>19 years old</p>
+          <p>6 mi. away</p>
+          <img src="./imgs/female-profile-pic-2.jpg" alt="" />
+        </div>
+      </div>
+      <!-- profiles grid ends here -->
+
+      <!-- FOOTER  -->
+      <footer class="app-footer">
+        <ul class="footer-list-items">
+          <li class="footer-list-item"><i class="fa fa-heart"></i>Matches</li>
+          <li class="footer-list-item"><i class="fa fa-user"></i>Profile</li>
+          <li class="footer-list-item"><i class="fa fa-cog"></i>Settings</li>
+        </ul>
+      </footer>
+    </div>
+    <script>
+      let splash = document.getElementById("splash-display");
+      let appContent = document.querySelector(".content");
+      let footer = document.querySelector(".app-footer");
+
+      setInterval(() => {
+        splash.classList.add("fadeOut");
+        appContent.classList.add("visible");
+      }, 3000);
+
+      window.addEventListener("scroll", e => {
+        footer.classList.add("hidden");
+        // console.log(window.scrollY);
+      });
+
+      setInterval(() => {
+        footer.classList.remove("hidden");
+      }, 1500);
+    </script>
+  </body>
+</html>

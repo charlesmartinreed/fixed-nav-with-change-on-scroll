@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src='script.js'></script>
+    <title>Imbalance by Miri Ponce</title>
+  </head>
+  <body>
+    <!-- NAV SECTION -->
+    <nav>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="#about__author">Meet Miri</a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+<!-- 'card' version of the book cover-->
+<div class="card">
+    <!-- this, the content inside, flips when we hover, not the card itself -->
+    <div class="card__content">
+      <div class="card__front">
+        <h3 class="card__title">Imbalance</h3>
+        <div class="card__subtitle">
+          <h5>The debut novel by <span>Miri Ponce</span></h5>
+        </div>
+      </div>
+
+      <div class="card__back">
+        <p class="card__body card__body__blurb">
+          A dizzing, harrowing tale of one man's deception and its tempestuous
+          wake.
+        </p>
+        <p class="card__body__quote">
+          <span>&#8220</span>Ponce's buoyant prose never fails to wallop during Imbalance's boisterous moments nor does it struggle to lend gravity in the novel's quiet passages. <span>&#8221</span>
+        </p>
+        <p class="card__body__quote__publication" >Los Angeles Times</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUY NOW BUTTON -->
+      <div class="button button__purchase" id="checkout-button-sku_GLjPsgXtCdAnEa"
+      role="link">Buy Hardcover</div>
+      <div class="button button__purchase" id="checkout-button-sku_GLjQuTlW7LeZYY"
+      role="link">Buy Paperback</div>
+  
+
+  <!-- ERROR MESSAGE FROM STRIPE -->
+  <div id="error-message"></div>
+    </div>
+
+  <div id="about__author">
+    <!-- https://www.pexels.com/photo/woman-wearing-black-long-sleeved-shirt-1832959/ -->
+    <h4>Meet Miri</h4>
+    <div class="bio-card">
+        <img src="assets/author-headshot.jpeg" alt="photo of Miri Ponce">
+        <div class="card-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:miriponcewrites@icloud.com"><i class="fas fa-envelope"></i></i></a>
+            
+            
+            
+        </div>
+    </div>
+   
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore corporis, assumenda ipsum quos eos explicabo et ducimus eaque architecto, sed aspernatur quidem atque est, sint voluptates. Nisi excepturi reprehenderit dicta accusantium facilis laboriosam dignissimos voluptate incidunt expedita, nostrum obcaecati!</p>
+
+    <div class="top-button" data-up-arrow="&#8593">
+  </div>
+    
+
+  </div>
+
+  <script>
+    (function() {
+  var stripe = Stripe('pk_test_ZL9HIqbaVPH1Op6slyV9DZjp00Vpv5ZT1O');
+
+  var checkoutButtonHardcover = document.getElementById('checkout-button-sku_GLjPsgXtCdAnEa');
+  var checkoutButtonPaperback = document.getElementById('checkout-button-sku_GLjQuTlW7LeZYY');
+
+  checkoutButtonHardcover.addEventListener('click', function () {
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_GLjPsgXtCdAnEa', quantity: 1}],
+      successUrl: 'http://localhost:4500/success.html',
+      cancelUrl: 'http://localhost:4500/index.html',
+    })
+    .then(function (result) {
+      if (result.error) {
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+
+        displayError.classList.add('active');
+
+        setTimeout(() => {
+          displayError.classList.remove('active')
+        }, 2500)
+      }
+    });
+  });
+
+  checkoutButtonPaperback.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_GLjQuTlW7LeZYY', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'http://localhost:4500/success.html',
+      cancelUrl: 'http://localhost:4500/index.html',
+    })
+    .then(function (result) {
+      if (result.error) {
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+
+        displayError.classList.add('active');
+
+        setTimeout(() => {
+          displayError.classList.remove('active')
+        }, 2500)
+      }
+    });
+  });
+})();
+  </script>
+  </body>
+</html>

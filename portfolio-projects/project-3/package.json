@@ -1,0 +1,29 @@
+{
+  "name": "inbalance-the-novel-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlesmartinreed/imbalance-the-novel-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlesmartinreed/imbalance-the-novel-website/issues"
+  },
+  "homepage": "https://github.com/charlesmartinreed/imbalance-the-novel-website#readme",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "stripe": "^7.14.0"
+  }
+}

@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --ff-book: "Bebas Neue", serif;
+  --ff-standard: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  --rotate-bottom: translateZ(3rem);
+  --rotate-middle: translateZ(6rem);
+  --rotate-top: translateZ(9rem);
+
+  --clr-soft-red: rgb(233, 85, 85);
+  --clr-soft-black: rgb(32, 32, 32);
+  --clr-soft-blue: rgb(14, 100, 187);
+  --clr-soft-white: rgb(236, 236, 236);
+
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    165deg,
+    rgb(160, 155, 151) 10%,
+    rgb(90, 84, 89) 40%,
+    rgb(31, 28, 36) 85%
+  );
+
+  font-family: var(--ff-standard);
+}
+
+#error-message {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  z-index: 1000;
+  transform: translateX(200px);
+  transition: transform 0.3s ease-in-out;
+}
+
+#error-message.active {
+  transform: translateX(-200px);
+}
+
+nav {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  height: 7vh;
+  width: 100%;
+  background: rgba(32, 32, 32, 0.5);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.5), -2px -2px 9px rgba(0, 0, 0, 0.5); */
+}
+
+.nav-items {
+  list-style-type: none;
+  padding-right: 2rem;
+}
+
+.nav-item a {
+  display: block;
+  color: var(--clr-soft-black);
+  text-decoration: none;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.03rem; */
+  font-size: 1.3rem;
+  /* text-shadow: 2px 2px 4px rgba(32, 32, 32, 0.5); */
+
+  transition: all 0.2s linear;
+  padding-bottom: 0.15em;
+}
+
+.nav-item a::first-letter {
+  /* color: var(--clr-soft-red); */
+  /* font-size: 1.4em; */
+  /* margin-right: 0.03em; */
+  /* font-weight: 900; */
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+  border-bottom: 3px solid var(--clr-soft-red);
+}
+
+.main-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.main-container .button__purchase {
+  margin-top: -6rem;
+}
+
+/* CARD MARKUP */
+.card {
+  width: 400px;
+  font-family: var(--ff-book);
+}
+
+.card__body {
+  transform: var(--rotate-middle);
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  line-height: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card__body__quote,
+.card__body__quote__publication {
+  transform: var(--rotate-middle);
+}
+
+.card__body__quote,
+.card__body__quote__publication {
+  font-family: var(--ff-standard);
+  font-weight: 300;
+  letter-spacing: -0.05rem;
+  color: var(--clr-soft-black);
+}
+
+.card__body__quote span {
+  color: var(--clr-soft-red);
+  font-size: 1.1em;
+  /* padding: 0rem 0.3rem; */
+  font-weight: 900;
+}
+
+.card__body__quote span:nth-child(1) {
+  margin-right: 0.05em;
+}
+
+.card__body__quote span:nth-child(2) {
+  padding-left: 0.1em;
+}
+
+.card__body__quote {
+  padding-top: 3rem;
+  padding-bottom: 0.4rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.card__body__quote__publication {
+  letter-spacing: -0.08rem;
+  font-weight: 500;
+  color: var(--clr-soft-red);
+}
+
+.card__title {
+  color: var(--clr-soft-blue);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 4.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  order: 2;
+
+  /* this actually pulls the item toward the user's perspective, so when we hover, it does so by moving 30px away from everything else */
+  transform: var(--rotate-middle);
+}
+
+.card__subtitle {
+  transform: var(--rotate-middle);
+  letter-spacing: 0.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  /* color: rgb(212, 212, 212); */
+  opacity: 0.8;
+}
+
+.card__subtitle span {
+  font-family: var(--ff-book);
+  font-weight: 800;
+  opacity: 1;
+  color: var(--clr-soft-red);
+}
+
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 16rem 4rem;
+  transition: transform 2s;
+
+  /* this allows the child elements to actual transform independently of this parent */
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  /* rotate here - apparently turn units are 360, so half a turn is 180*/
+  transform: rotateY(0.5turn);
+}
+
+.card__front,
+.card__back {
+  /* overlap */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+
+  display: grid;
+  align-content: center;
+
+  /* this allows the child elements to actual transform independently of this parent */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.5), -2px -2px 9px rgba(0, 0, 0, 0.5);
+}
+
+.card__front {
+  /* cover image courtesy of Johannes Rapprich @ Pexels - https://www.pexels.com/photo/close-up-of-shoreline-1387532/  */
+  background-image: url(assets/imbalance_cover.jpeg);
+  background-size: cover;
+  color: var(--clr-soft-black);
+}
+
+.card__front::before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  border: 3px solid currentColor;
+  transform: var(--rotate-bottom);
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+
+  background-color: var(--clr-soft-white);
+  backface-visibility: hidden;
+}
+
+/* PURCHASE STYLING */
+
+.button__purchase {
+  background: seagreen;
+  color: var(--clr-soft-white);
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button__purchase:nth-of-type(odd) {
+  margin-top: -10rem;
+}
+
+.button__purchase:hover {
+  transform: scale(1.1);
+}
+
+/* AUTHOR SECTION */
+
+#about__author {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  /* background-color: rgb(31, 28, 36); */
+  /* margin: 2rem 0; */
+  position: relative;
+  padding: 0 2rem;
+}
+
+#about__author img {
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+}
+
+#about__author h4 {
+  color: var(--clr-soft-red);
+  font-size: 3.25rem;
+  position: relative;
+  letter-spacing: 0.25rem;
+}
+
+#about__author h4::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 5px;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-soft-blue);
+}
+
+#about__author p {
+  color: var(--clr-soft-white);
+  line-height: 2.3rem;
+  letter-spacing: 0.15rem;
+  font-weight: 400;
+}
+
+#about__author .bio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about__author .bio-card .card-icons {
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-evenly;
+  padding: 1rem;
+  font-size: 2.1rem;
+  width: 200%;
+  color: var(--clr-soft-blue);
+}
+
+#about__author .bio-card .card-icons a {
+  color: currentColor;
+  transition: color 0.3s ease-in-out;
+}
+
+#about__author .bio-card .card-icons a:hover,
+#about__author .bio-card .card-icons a:focus {
+  color: var(--clr-soft-black);
+}
+
+#about__author .top-button {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(167, 167, 167);
+  z-index: 999;
+  cursor: pointer;
+}
+
+#about__author .top-button::after {
+  content: attr(data-up-arrow);
+  position: absolute;
+  color: rgb(22, 22, 22);
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

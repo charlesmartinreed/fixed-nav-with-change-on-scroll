@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-font-main: #6d75c0;
+  --clr-font-supplementary: #7e1b25;
+  --clr-off-white: rgb(233, 233, 248);
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  width: 50%;
+  color: var(--clr-font-supplementary);
+}
+
+.container-left {
+  background-color: var(--clr-off-white);
+  color: var(--clr-font-main);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-left h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+}
+
+.container-left p {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgb(26, 26, 35);
+  margin-bottom: 5rem;
+}
+
+.container-left svg {
+  height: 500px;
+  width: 500px;
+}
+
+.container-right {
+  background-color: rgb(26, 26, 35);
+  overflow-y: auto;
+}
+
+.container-right .flavor-text-container {
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  max-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.container-right .flavor-text-container .flavor-header {
+  font-size: 1.9rem;
+  color: var(--clr-off-white);
+  font-weight: 300;
+}
+
+.container-right .flavor-text-container .flavor-header:last-of-type {
+  margin-bottom: 1.3rem;
+}
+
+.container-right .flavor-text-container .flavor-body {
+  line-height: 1.5rem;
+  font-weight: 300;
+  width: 80%;
+}
+
+.form-container {
+  height: 50%;
+  width: 100%;
+
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  position: relative;
+}
+
+.container-right .form-header {
+  font-size: 1.6rem;
+  color: var(--clr-off-white);
+  font-weight: 300;
+  margin-bottom: 1.3rem;
+}
+
+.form-container input,
+.form-container textarea {
+  border: 1px solid rgb(15, 15, 15);
+  background: rgb(26, 26, 35);
+  outline: none;
+  border-radius: 3px;
+  padding-left: 0.6rem;
+  color: var(--clr-off-white);
+}
+
+.form-container input {
+  width: 50%;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container input:focus-within,
+.form-container textarea:focus-within {
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.4);
+}
+
+.form-container textarea {
+  width: 50%;
+  height: 120px;
+  font-size: 0.9rem;
+  padding-top: 0.6rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container button[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 0.4rem 3rem;
+  color: rgb(15, 15, 15);
+  background-color: var(--clr-font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+  border-radius: 3px;
+
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form-container button[type="submit"]:focus-within {
+  animation-name: shake;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: 4;
+}
+
+#recaptcha-div {
+  background-color: transparent;
+  height: 78px;
+  width: 304px;
+  margin: 1rem auto;
+}
+
+@keyframes shake {
+  from {
+    transform: translateX(-2px);
+  }
+
+  to {
+    transform: translateX(2px);
+  }
+}
+
+@media screen and (max-width: 915px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .container {
+    min-height: 50vh;
+    width: 100%;
+  }
+
+  .container-left svg {
+    height: 400px;
+    width: 400px;
+    margin-bottom: 1rem;
+  }
+}
