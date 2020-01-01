@@ -1,0 +1,69 @@
+@import "./style.css";
+
+.portfolio-display {
+  min-height: 100vh;
+  width: 100%;
+  margin-top: 15%;
+  padding: 0 2rem;
+
+  display: grid;
+  row-gap: 1rem;
+  place-items: center;
+}
+
+.portfolio-project {
+  width: 90%;
+  height: 600px;
+}
+
+.portfolio-desc-title {
+  font-size: 3.1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.02rem;
+  font-weight: 900;
+  color: rgb(172, 64, 64);
+}
+
+.portfolio-desc-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 80%;
+  line-height: 2.3rem;
+  /* align-self: center; */
+  font-style: italic;
+}
+
+.portfolio-display iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+}
+
+.portfolio-project-link {
+  margin-top: 0.6rem;
+  text-decoration: none;
+  color: rgb(32, 32, 32);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.portfolio-project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3em;
+  height: 5px;
+  width: 100%;
+  transform: scale(0);
+
+  transform-origin: left;
+  transition: all 0.3s linear;
+}
+
+.portfolio-project-link:hover::after {
+  background-color: #28a745;
+  transform: scale(1);
+}

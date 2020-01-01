@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  --gradient: linear-gradient(
+    90deg,
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+
+  --gradient-duration: 22s;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /* place-items: center; */
+  /* background-color: rgb(218, 218, 236); */
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bodyGradient var(--gradient-duration) infinite alternate
+    ease-in-out;
+}
+
+.content {
+  padding: 3rem;
+  width: 100%;
+  /* background-color: rgb(218, 218, 236); */
+  /* box-shadow: 0px 0px 4em rgba(0, 0, 0, 0.6); */
+  display: grid;
+  gap: 4rem;
+  place-items: center;
+}
+
+audio {
+  /* height: 50px; */
+  outline: none;
+}
+
+.now-playing {
+  background-color: rgb(226, 226, 238);
+  box-shadow: 0px 0px 4em rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  padding-top: 2rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1rem; */
+  padding-bottom: 3rem;
+
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.now-playing .now-playing-art {
+  /* margin-bottom: 1.2em; */
+  width: 50%;
+}
+
+.now-playing .album-art {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.now-playing .now-playing-info {
+}
+
+.now-playing .song-info {
+  color: rgb(43, 42, 42);
+}
+
+.now-playing .song-name {
+  margin-bottom: 0.3em;
+  color: rgb(29, 29, 136);
+  font-weight: 900;
+  font-size: 2.2rem;
+}
+
+.now-playing .artist-name,
+.now-playing .album-name {
+  font-weight: 600;
+  margin-bottom: 0.2em;
+  font-size: 1.1em;
+}
+
+.now-playing .album-name {
+  color: rgb(223, 91, 91);
+}
+
+.track-listing .track-list .track-item {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  line-height: 1.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 1em;
+  margin-top: 0.1em;
+  color: rgb(43, 42, 42);
+  box-shadow: 1px 1px 2em rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.track-listing .track-list .track-item:nth-of-type(even) {
+  margin-left: 0.5em;
+  /* margin: 0.1em 0 0.5em; */
+  width: 105%;
+}
+
+.track-listing .track-list .track-item.playing {
+  color: rgb(29, 29, 136);
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.track-listing .track-list .track-item:hover {
+  transform: scale(1.02);
+}
+
+.track-listing .track-list .track-item span {
+  font-size: 0.6em;
+  color: rgb(223, 91, 91);
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes bodyGradient {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}

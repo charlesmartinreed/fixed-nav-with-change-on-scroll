@@ -1,5 +1,6 @@
 const navbarTouchEl = document.querySelector(".navbar-touch-element");
 const navbarEl = document.querySelector(".navbar-link-container");
+const navLinks = document.querySelectorAll(".navbar-link-container a");
 const logoEl = document.querySelector(".logo-container");
 const blogPermalink = document.querySelectorAll(".blog-permalink");
 const blogContents = document.querySelectorAll(".blog-contents");
