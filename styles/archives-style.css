@@ -1,0 +1,15 @@
+@import "./style.css";
+
+.archive-container {
+  min-height: 100vh;
+  width: 100%;
+  margin-top: 8%;
+  display: grid;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  place-items: center;
+}
+
+.archive-container h1 {
+  font-size: 7rem;
+}

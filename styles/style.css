@@ -327,6 +327,7 @@ a {
   background-color: #3a4161;
   margin-left: 0;
   color: rgb(16, 16, 16);
+  font-size: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
