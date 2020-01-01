@@ -1,9 +1,78 @@
+const projects = [
+  {
+    projectID: "0",
+    projectName: "Moodswing",
+    projectURL: "./portfolio-projects/project-1/index.html",
+    projectRepo:
+      "https://github.com/charlesmartinreed/everything-is-changing-colour",
+    projectDescription:
+      "A UI/UX mockup of a progressive web app that ties into a Node/Mongo-based backend for allowing users to stream their uploaded music from the cloud."
+  },
+  {
+    projectID: "1",
+    projectName: "Pawpaw Proof",
+    projectURL: "./portfolio-projects/project-2/index.html",
+    projectRepo:
+      "https://github.com/charlesmartinreed/yet-another-password-generator",
+    projectDescription:
+      "A simple, clean password generator that I designed to help my grandfather - aka, my Pawpaw :D - come up with safe, secure passwords that he could confidently use to cover his digital footprints."
+  }
+];
+
+// EVENT LISTENER FOR ARROW ELEMENTS
+
+const prevProjectArrow = document.querySelector(".arrow-left");
+const nextProjectArrow = document.querySelector(".arrow-right");
+
+const projectArrowElems = document.querySelectorAll(".arrow");
+
+projectArrowElems.forEach(arrow => {
+  arrow.addEventListener("click", () => {
+    // console.log(arrow.dataset.direction);
+    if (arrow.dataset.direction === "left") {
+      if (currentProjectIdx > 0) {
+        currentProjectIdx--;
+      } else if (currentProjectIdx === 0) {
+        currentProjectIdx = projects.length - 1;
+      }
+    }
+
+    if (arrow.dataset.direction === "right") {
+      if (currentProjectIdx === projects.length - 1) {
+        currentProjectIdx = 0;
+      } else {
+        currentProjectIdx++;
+      }
+    }
+
+    console.log(currentProjectIdx);
+    displayProject(currentProjectIdx);
+  });
+});
+
+const displayProject = projectIdx => {
+  // grab the necessary elements
+  let project = projects[projectIdx];
+
+  let projNameEl = document.querySelector(".portfolio-desc-title");
+  let projDescEl = document.querySelector(".portfolio-desc-text");
+  let projGitLink = document.querySelector(".portfolio-project-link");
+  let projBrowserFrame = document.querySelector(".portfolio-project iframe");
+
+  projNameEl.textContent = `${project.projectName}`;
+  projDescEl.textContent = `${project.projectDescription}`;
+  projGitLink.href = `${project.projectRepo}`;
+  projBrowserFrame.src = `${project.projectURL}`;
+};
+
 const navbarTouchEl = document.querySelector(".navbar-touch-element");
 const navbarEl = document.querySelector(".navbar-link-container");
 const navLinks = document.querySelectorAll(".navbar-link-container a");
 const logoEl = document.querySelector(".logo-container");
 const blogPermalink = document.querySelectorAll(".blog-permalink");
 const blogContents = document.querySelectorAll(".blog-contents");
+
+let currentProjectIdx = 0;
 
 let fullBlogVisible = false;
 
@@ -27,4 +96,8 @@ blogPermalink.forEach(link => {
 
     link.previousElementSibling.classList.toggle("full-blog-visible");
   });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  displayProject(currentProjectIdx);
 });

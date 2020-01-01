@@ -9,6 +9,8 @@
   display: grid;
   row-gap: 1rem;
   place-items: center;
+
+  position: relative;
 }
 
 .portfolio-project {
@@ -23,6 +25,25 @@
   letter-spacing: -0.02rem;
   font-weight: 900;
   color: rgb(172, 64, 64);
+}
+
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  color: rgb(20, 20, 117);
+  font-size: 2.5rem;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.arrow-left {
+  top: 1%;
+  left: 5%;
+}
+
+.arrow-right {
+  top: 1%;
+  right: 5%;
 }
 
 .portfolio-desc-text {
@@ -66,4 +87,21 @@
 .portfolio-project-link:hover::after {
   background-color: #28a745;
   transform: scale(1);
+}
+
+@media screen and (max-width: 520px) {
+  .arrow-left,
+  .arrow-right {
+    font-size: 1.9rem;
+  }
+
+  .arrow-left {
+    top: 1.5%;
+    left: 2%;
+  }
+
+  .arrow-right {
+    top: 1.5%;
+    right: 2%;
+  }
 }
