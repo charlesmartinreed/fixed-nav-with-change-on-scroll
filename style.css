@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,300,300i,400,400i,500,500i,600,600i,700,700i|IBM+Plex+Serif:300,300i,400,400i,500,500i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i|Oswald:400,500,600,700&display=swap");
 
 *,
 *::before,
@@ -9,12 +9,14 @@
 }
 
 :root {
-  --ff-sans-main: "IBM Plex Sans", sans-serif;
-  --ff-serif-main: "IBM Plex Serif", serif;
+  --ff-sans-main: "Open Sans", sans-serif;
+  --ff-sans-alt: "Oswald", sans-serif;
 }
 
 body {
-  /* padding: 1rem 2rem; */
+  font-family: var(--ff-sans-main);
+  background-color: rgb(232, 232, 246);
+  color: rgb(32, 32, 32);
 }
 
 html {
@@ -22,7 +24,7 @@ html {
 }
 
 a {
-  font-family: var(--ff-sans-main);
+  font-family: var(--ff-sans-alt);
 }
 
 .logo-container {
@@ -236,7 +238,7 @@ a {
 .blog-post-container {
   font-family: var(--ff-serif-main);
 
-  transition: box-shadow 0.6s linear;
+  transition: box-shadow 0.4s linear;
   width: 70%;
   margin: 0 auto;
   position: relative;
@@ -258,52 +260,64 @@ a {
   box-shadow: 0px 0px 3rem rgba(0, 0, 0, 0.3);
 }
 
-body {
-  font-family: var(--ff-sans-main);
-  background-color: rgb(232, 232, 246);
-  color: rgb(32, 32, 32);
-}
-
 .blog-title {
-  font-family: var(--ff-sans-main);
+  font-family: var(--ff-sans-alt);
 
   font-size: 2.7rem;
   text-transform: uppercase;
   color: rgb(20, 20, 117);
   font-weight: 800;
+  letter-spacing: -0.1rem;
 }
 
 .blog-timestamp {
   padding-top: 0;
   font-weight: 500;
-  font-family: var(--ff-sans-main);
+  font-family: var(--ff-sans-alt);
 }
 
-.blog-preclick-text {
+.blog-contents,
+.blog-contents-more {
   font-weight: 300;
-  font-size: 1.3rem;
-  line-height: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+}
+
+.blog-contents-more {
+  display: none;
+}
+
+.blog-contents-more.full-blog-visible {
+  display: block;
 }
 
 .blog-permalink {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   /* color: rgb(85, 14, 85); */
   color: rgb(20, 20, 117);
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: -0.03rem;
   display: block;
+  text-align: center;
+}
+
+.blog-permalink::after,
+.blog-permalink.full-blog-active::after {
+  position: absolute;
+  color: rgb(32, 32, 32);
+  margin-top: -0.65rem;
+  margin-left: 0.3rem;
+  font-size: 2.2rem;
+  transition: color 0.4s ease-in-out;
 }
 
 .blog-permalink::after {
-  content: attr(data-link-after);
-  position: absolute;
-  color: rgb(32, 32, 32);
-  margin-top: 0.4rem;
-  margin-left: 0.3rem;
-  font-size: 1.3rem;
-  transition: color 0.4s ease-in-out;
+  content: attr(data-link-more);
+}
+
+.blog-permalink.full-blog-active::after {
+  content: attr(data-link-less);
 }
 
 .blog-permalink:hover.blog-permalink::after,
@@ -330,7 +344,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.02rem;
 }
 
 #page-footer #to-top-icon {
