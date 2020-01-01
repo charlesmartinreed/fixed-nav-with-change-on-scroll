@@ -375,4 +375,8 @@ a {
     width: 10%;
     cursor: pointer;
   }
+
+  .blog-post-container:first-of-type {
+    margin-top: 25%;
+  }
 }
