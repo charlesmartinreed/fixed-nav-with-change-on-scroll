@@ -80,7 +80,6 @@ projectArrowElems.forEach(arrow => {
       }
     }
 
-    console.log(currentProjectIdx);
     displayProject(currentProjectIdx);
   });
 });
@@ -101,6 +100,8 @@ const displayProject = projectIdx => {
 };
 
 const navbarTouchEl = document.querySelector(".navbar-touch-element");
+const navbarSquares = document.querySelectorAll(".navbar-square");
+
 const navbarEl = document.querySelector(".navbar-link-container");
 const navLinks = document.querySelectorAll(".navbar-link-container a");
 const logoEl = document.querySelector(".logo-container");
@@ -110,6 +111,14 @@ const blogContents = document.querySelectorAll(".blog-contents");
 let currentProjectIdx = 0;
 
 let fullBlogVisible = false;
+
+// navbarSquares.forEach(square => {
+//   square.addEventListener("click", function() {
+//     navbarTouchEl.classList.toggle("navbar-open");
+//     navbarEl.classList.toggle("navbar-visible");
+//     logoEl.classList.toggle("logo-not-visible");
+//   });
+// });
 
 navbarTouchEl.addEventListener("click", function() {
   this.classList.toggle("navbar-open");
