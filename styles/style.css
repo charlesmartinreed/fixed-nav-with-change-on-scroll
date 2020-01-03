@@ -57,11 +57,12 @@ a {
   -ms-flex-item-align: center;
   align-self: center;
   margin-left: 0.6rem;
-  font-size: 1.7rem;
+  font-size: 2.1rem;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: -0.1rem;
   color: rgb(172, 64, 64);
+  font-family: monospace;
 }
 
 .logo-container .logo-text span {
@@ -372,7 +373,7 @@ a {
   margin-top: 6vh;
   background-color: #3a4161;
   margin-left: 0;
-  color: rgb(16, 16, 16);
+  color: rgb(29, 33, 53);
   font-size: 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -406,10 +407,11 @@ a {
 
 #page-footer #to-top-icon {
   position: absolute;
-  top: 10%;
-  right: 2%;
+  top: 5%;
+  right: 1%;
+  /* transform: translate(-1%, -1%); */
   font-size: 1.5rem;
-  color: rgb(16, 16, 16);
+  color: rgb(29, 33, 53);
 }
 
 #footer-content-icons {
