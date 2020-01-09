@@ -98,7 +98,7 @@ a {
 
 .navbar-touch-element {
   position: absolute;
-  right: 3%;
+  right: 0%;
   top: 0%;
   height: 100%;
   width: 10%;
@@ -279,7 +279,8 @@ a {
   transition: box-shadow 0.4s linear;
 
   transition: box-shadow 0.4s linear, -webkit-box-shadow 0.4s linear;
-  width: 70%;
+  width: 80%;
+  max-width: 700px;
   margin: 0 auto;
   position: relative;
   margin-top: 5%;
@@ -298,7 +299,7 @@ a {
 
 .blog-post-container:hover {
   -webkit-box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.3);
 }
 
 .blog-title {
@@ -371,10 +372,11 @@ a {
   height: 150px;
   width: 100vw;
   margin-top: 6vh;
-  background-color: #3a4161;
+  /* background-color: #3a4161; */
   margin-left: 0;
   color: rgb(29, 33, 53);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-family: monospace;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,29 +409,30 @@ a {
 
 #page-footer #to-top-icon {
   position: absolute;
-  top: 5%;
-  right: 1%;
+  bottom: 10%;
+  right: 5%;
   /* transform: translate(-1%, -1%); */
   font-size: 1.5rem;
   color: rgb(29, 33, 53);
 }
 
 #footer-content-icons {
-  padding-top: 0.5rem;
+  padding: 0.5rem;
 }
 
 #footer-content-icons i {
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
 }
 
 #footer-content a {
   text-decoration: none;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: inherit;
 
   -webkit-transition: all 0.3s ease-in-out;
 
   transition: all 0.3s ease-in-out;
+  padding: 0 0.3rem;
 }
 
 #footer-content a:hover {
@@ -439,6 +442,14 @@ a {
 @media screen and (max-width: 525px) {
   .navbar-link a {
     font-size: 1rem;
+  }
+
+  .navbar-touch-element {
+    right: 5%;
+  }
+
+  .blog-post-container {
+    /* max-width: 400px; */
   }
 
   .blog-post-container:first-of-type {
