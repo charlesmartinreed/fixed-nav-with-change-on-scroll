@@ -57,7 +57,7 @@ a {
   -ms-flex-item-align: center;
   align-self: center;
   margin-left: 0.6rem;
-  font-size: 2.1rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: -0.1rem;
@@ -108,7 +108,7 @@ a {
 
 .navbar-square {
   position: absolute;
-  background-color: rgb(233, 180, 46);
+  background-color: rgb(64, 64, 64);
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -167,8 +167,8 @@ a {
   text-decoration: transparent;
   color: rgb(32, 32, 32);
   font-weight: 300;
-  font-size: 1.6rem;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  /* text-transform: uppercase; */
   letter-spacing: -0.02rem;
   margin-right: 1rem;
 
@@ -194,23 +194,27 @@ a {
   transition: all 0.3s linear;
 }
 
-.navbar-link .link-1:hover::after {
-  background-color: #f0d287;
+.navbar-link .link-1:hover::after,
+.navbar-link .link-1.active {
+  background-color: #404040;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
 
-.navbar-link .link-2:hover::after {
+.navbar-link .link-2:hover::after,
+.navbar-link .link-2.active {
   background-color: #a495b4;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.navbar-link .link-3:hover::after {
+.navbar-link .link-3:hover::after,
+.navbar-link .link-3.active {
   background-color: #7f82aa;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.navbar-link .link-4:hover::after {
+.navbar-link .link-4:hover::after,
+.navbar-link .link-4.active {
   background-color: #636fa4;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -223,7 +227,7 @@ a {
 }
 
 .navbar-touch-element.navbar-open .square-1 {
-  background-color: #f0d287;
+  background-color: #404040;
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   -webkit-transform: translate(-130%, -120%);
@@ -239,7 +243,8 @@ a {
 }
 
 .navbar-touch-element.navbar-open .square-3 {
-  background-color: #7f82aa;
+  background-color: #636fa4;
+
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   -webkit-transform: translate(30%, 20%);
@@ -247,7 +252,7 @@ a {
 }
 
 .navbar-touch-element.navbar-open .square-4 {
-  background-color: #636fa4;
+  background-color: #7f82aa;
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
   -webkit-transform: translate(-130%, 20%);
@@ -291,21 +296,19 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  width: 2px;
-  /* transform: translateY(50%); */
-  height: 100%;
-  background-color: rgb(233, 180, 46);
+  width: 5px;
+  transform: translateY(50%);
+  height: 50%;
+  /* background-color: rgb(58, 65, 97); */
 }
 
 .blog-post-container:hover {
-  -webkit-box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.3);
 }
 
 .blog-title {
   font-family: var(--ff-sans-alt);
 
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   color: rgb(20, 20, 117);
   font-weight: 600;
@@ -321,8 +324,8 @@ a {
 .blog-contents,
 .blog-contents-more {
   font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 2.1rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
 }
 
 .blog-contents-more {
@@ -335,7 +338,7 @@ a {
 
 .blog-permalink {
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   /* color: rgb(85, 14, 85); */
   color: rgb(20, 20, 117);
   font-weight: 400;
@@ -348,9 +351,9 @@ a {
 .blog-permalink.full-blog-active::after {
   position: absolute;
   color: rgb(32, 32, 32);
-  margin-top: -0.65rem;
+  margin-top: -0.2rem;
   margin-left: 0.3rem;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   -webkit-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
 }

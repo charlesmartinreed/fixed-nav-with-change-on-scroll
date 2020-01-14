@@ -120,14 +120,9 @@ let currentProjectIdx = 0;
 
 let fullBlogVisible = false;
 
-// navbarSquares.forEach(square => {
-//   square.addEventListener("click", function() {
-//     navbarTouchEl.classList.toggle("navbar-open");
-//     navbarEl.classList.toggle("navbar-visible");
-//     logoEl.classList.toggle("logo-not-visible");
-//   });
-// });
+// TODO: add active class to clicked nav links
 
+// CLICK ACTION FOR NAVBAR LINK CONTAINER/LOGO
 navbarTouchEl.addEventListener("click", function() {
   this.classList.toggle("navbar-open");
   navbarEl.classList.toggle("navbar-visible");
