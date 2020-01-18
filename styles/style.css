@@ -88,12 +88,13 @@ a {
 .navbar {
   min-width: 100%;
   min-height: 10%;
-  /* background-color: rgb(214, 214, 228); */
+  background-color: rgb(214, 214, 228);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
 }
 
 .navbar-touch-element {
@@ -141,6 +142,10 @@ a {
   opacity: 1;
   -webkit-transform: translateX(0);
   transform: translateX(0);
+}
+
+.navbar.navbar-visible {
+  background-color: rgb(232, 232, 246);
 }
 
 .navbar-links {
@@ -412,11 +417,23 @@ a {
 
 #page-footer #to-top-icon {
   position: absolute;
-  bottom: 10%;
-  right: 5%;
-  /* transform: translate(-1%, -1%); */
+  top: -25%;
+  right: 50%;
   font-size: 1.5rem;
-  color: rgb(29, 33, 53);
+  color: whitesmoke;
+  background-color: rgb(29, 33, 53);
+  padding: 0.75rem;
+  /* transform-origin: bottom center; */
+  transform: scale(0) translateX(50%);
+  transition: all 0.4s ease-in-out;
+}
+
+#page-footer #to-top-icon.active {
+  transform: scale(1) translateX(50%);
+}
+
+#page-footer #to-top-icon:hover {
+  background-color: rgb(233, 180, 46);
 }
 
 #footer-content-icons {
@@ -458,6 +475,7 @@ a {
   .blog-post-container:first-of-type {
     margin-top: 25%;
   }
+
 }
 
 @media screen and (max-width: 390px) {

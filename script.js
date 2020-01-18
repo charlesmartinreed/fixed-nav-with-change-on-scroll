@@ -110,11 +110,15 @@ const displayProject = projectIdx => {
 const navbarTouchEl = document.querySelector(".navbar-touch-element");
 const navbarSquares = document.querySelectorAll(".navbar-square");
 
+const navbar = document.querySelector('.navbar')
 const navbarEl = document.querySelector(".navbar-link-container");
 const navLinks = document.querySelectorAll(".navbar-link-container a");
 const logoEl = document.querySelector(".logo-container");
 const blogPermalink = document.querySelectorAll(".blog-permalink");
 const blogContents = document.querySelectorAll(".blog-contents");
+const blogTitles = document.querySelectorAll('.blog-title');
+
+const jumpToTopEl = document.getElementById('to-top-icon');
 
 let currentProjectIdx = 0;
 
@@ -125,6 +129,7 @@ let fullBlogVisible = false;
 // CLICK ACTION FOR NAVBAR LINK CONTAINER/LOGO
 navbarTouchEl.addEventListener("click", function() {
   this.classList.toggle("navbar-open");
+  navbar.classList.toggle('navbar-visible');
   navbarEl.classList.toggle("navbar-visible");
   logoEl.classList.toggle("logo-not-visible");
 });
@@ -148,3 +153,26 @@ blogPermalink.forEach(link => {
 window.addEventListener("DOMContentLoaded", () => {
   displayProject(currentProjectIdx);
 });
+
+// OBSERVER FOR TO TOP ARROW
+const footerCheck = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log('intersecting now')
+      jumpToTopEl.classList.add('active')
+    } else {
+      console.log('out of intersection range')
+      jumpToTopEl.classList.remove('active')
+    }
+  })
+}
+
+let observer = new IntersectionObserver(footerCheck, {
+  threshold: [0.5]
+})
+
+observer.observe(document.getElementById('page-footer'))
+
+// blogTitles.forEach(title => {
+//   observer.observe(title)
+// })
